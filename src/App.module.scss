@@ -1,0 +1,36 @@
+.formWrapper {
+  z-index: 100;
+
+  .inputsWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 -10%;
+
+    input {
+      padding: 20px 5px;
+      font-size: 60px;
+      text-align: center;
+      border: 0;
+      box-shadow: 1px 1px 6px 0px rgba(black, 0.8) inset;
+      border-radius: 3px;
+    }
+  }
+
+  button {
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    margin: 30px auto;
+    border-radius: 5px;
+    border: 0;
+    padding: 10px;
+    box-shadow: 0 2px 20px 9px rgba(black, 0.8);
+    cursor: pointer;
+    color: rgba(black, 1);
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: rgba(black, 0.5);
+    }
+  }
+}

@@ -1,0 +1,33 @@
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../src/assets/pattern_01.png) rgb(34, 34, 34) repeat;
+
+  &:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgb(black, 0.1);
+    animation: bg_opacity 5s infinite;
+    z-index: -1;
+  }
+}
+
+@keyframes bg_opacity {
+  0% {
+    background: rgb(black, 0.1);
+  }
+  50% {
+    background: rgb(black, 0.4);
+  }
+  100% {
+    background: rgb(black, 0.1);
+  }
+}
