@@ -27,6 +27,7 @@
     box-shadow: 1px 1px 6px 0px rgba(black, 0.8) inset;
     border-radius: 3px;
     margin: 10px;
+    max-width: 90px;
 
     &.isValid {
       background-color: black;
