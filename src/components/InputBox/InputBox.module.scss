@@ -1,0 +1,37 @@
+.inputBox {
+  position: relative;
+
+  span{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    color: white;
+    background: black;
+    border: 1px solid #6AD2E0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+  }
+
+  input {
+    padding: 20px 5px;
+    font-size: 60px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 1px 1px 6px 0px rgba(black, 0.8) inset;
+    border-radius: 3px;
+    margin: 10px;
+
+    &.isValid {
+      background-color: black;
+      color: white;
+      border-color: #6AD2E0;
+    }
+  }
+}

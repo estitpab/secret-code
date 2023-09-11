@@ -3,16 +3,13 @@
 
   .inputsWrapper {
     display: flex;
-    justify-content: space-evenly;
-    margin: 0 -10%;
+    flex-wrap: wrap;
+    max-width: 350px;
+    margin: 0 auto;
+    justify-content: center;
 
-    input {
-      padding: 20px 5px;
-      font-size: 60px;
-      text-align: center;
-      border: 0;
-      box-shadow: 1px 1px 6px 0px rgba(black, 0.8) inset;
-      border-radius: 3px;
+    @media screen and (min-width : 1024px){
+      max-width: inherit;
     }
   }
 
