@@ -9,7 +9,7 @@ type Props = {
 const InputBox = ({ name, position, isValid }: Props) => {
   return (
     <div className={styles.inputBox}>
-      <span>{Number(position) + 1}</span>
+      <span className={isValid ? styles.isValid : ''}>{isValid ? '✅' : Number(position) + 1}</span>
       <input
         className={isValid ? styles.isValid : ''}
         required

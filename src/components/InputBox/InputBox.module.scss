@@ -17,6 +17,12 @@
     border: 1px solid #6AD2E0;
     font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
+
+    &.isValid{
+        font-size: 30px;
+        top: 8px;
+        left: 8px;
+    }
   }
 
   input {
