@@ -30,4 +30,10 @@
       color: rgba(black, 0.5);
     }
   }
+
+  .displayResults{
+    display:flex;
+    min-height: 100px;
+    background-color: aqua;
+  }
 }

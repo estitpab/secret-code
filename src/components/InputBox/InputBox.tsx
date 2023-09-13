@@ -9,9 +9,16 @@ type Props = {
 const InputBox = ({ name, position, isValid }: Props) => {
   return (
     <div className={styles.inputBox}>
-      <span className={isValid ? styles.isValid : ''}>{isValid ? '✅' : Number(position) + 1}</span>
+      <span
+        className={
+          isValid ? styles.isValid : ""
+        }
+      >
+        {isValid ? "✅" : Number(position) + 1}
+      </span>
       <input
-        className={isValid ? styles.isValid : ''}
+        type="text"
+        className={isValid ? styles.isValid : isValid !== undefined ? styles.isError : ""}
         required
         name={name}
         minLength={1}

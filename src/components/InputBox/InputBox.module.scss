@@ -40,5 +40,8 @@
       color: white;
       border-color: #6AD2E0;
     }
+    &.isError{
+        background-color: red;
+    }
   }
 }

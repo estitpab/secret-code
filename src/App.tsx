@@ -4,15 +4,16 @@ import InputBox from "./components/InputBox/InputBox";
 
 function App() {
   const [testedResults, setTestedResults] = useState<boolean[]>([]);
-  const isExpectedResult = testedResults.length > 0 && testedResults.every((data) => data === true);
+  const isExpectedResult =
+    testedResults.length > 0 && testedResults.every((data) => data === true);
+  if (isExpectedResult) alert("Bravo");
 
-  console.log('isExpectedResult',isExpectedResult);
-  console.log('testedResults',testedResults);
-
-  const EXPECTED_VALUES = ["7", "to", "C", "D", "E", "F"];
+  const EXPECTED_VALUES = ["A", "B", "C", "D", "E", "F"];
+  //TODO: Gérer les valeurs EXPECTED_VALUES depuis un backoffice ou des variables d'environnement
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement | EventTarget>) => {
     e.preventDefault();
+    setTestedResults((curr) => curr);
 
     if (e.target instanceof HTMLFormElement) {
       const listOfResults: boolean[] = [];
@@ -44,7 +45,6 @@ function App() {
 
         <button type="submit">Valider le code</button>
       </form>
-      {isExpectedResult && <p style={{ color: "green" }}>Bravo !</p>}
     </div>
   );
 }
