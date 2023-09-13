@@ -15,6 +15,7 @@ function App() {
   }
 
   const EXPECTED_VALUES = ["A", "B", "C", "D", "E", "F"];
+  const VICTORY_MESSAGE = "Félicitations ! Vous avez surmonté toutes les épreuves et découvert le code, à vous le trésor ! Rendez-vous **** pour trouver votre récompense !"
   //TODO: Gérer les valeurs EXPECTED_VALUES depuis un backoffice ou des variables d'environnement
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement | EventTarget>) => {
@@ -37,8 +38,7 @@ function App() {
 
   return (
     <div className={styles.formWrapper}>
-      <canvas
-        ref={fireworksContainer as React.RefObject<HTMLCanvasElement>}/>
+      <canvas ref={fireworksContainer as React.RefObject<HTMLCanvasElement>} />
       <form onSubmit={handleSubmit}>
         <div className={styles.inputsWrapper}>
           {EXPECTED_VALUES.map((value, index) => (
@@ -50,8 +50,13 @@ function App() {
             />
           ))}
         </div>
-
-        <button type="submit">Valider le code</button>
+        <div className={styles.validationBloc}>
+          {isExpectedResult ? (
+            <div className={styles.victoryMessage}>{VICTORY_MESSAGE}</div>
+          ) : (
+            <button type="submit">Valider le code</button>
+          )}
+        </div>
       </form>
     </div>
   );

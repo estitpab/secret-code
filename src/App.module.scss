@@ -1,7 +1,7 @@
 .formWrapper {
   z-index: 100;
 
-  canvas{
+  canvas {
     position: absolute;
     top: 0;
     left: 0;
@@ -17,32 +17,43 @@
     margin: 0 auto;
     justify-content: center;
 
-    @media screen and (min-width : 1024px){
+    @media screen and (min-width: 1024px) {
       max-width: inherit;
     }
   }
 
-  button {
-    display: block;
-    font-size: 30px;
-    text-align: center;
-    margin: 30px auto;
-    border-radius: 5px;
-    border: 0;
-    padding: 10px;
-    box-shadow: 0 2px 20px 9px rgba(black, 0.8);
-    cursor: pointer;
-    color: rgba(black, 1);
-    transition: color 0.3s ease;
+  .validationBloc {
+    min-height: 200px;
+    padding-top: 30px;
 
-    &:hover {
-      color: rgba(black, 0.5);
+    button {
+      display: block;
+      font-size: 30px;
+      text-align: center;
+      margin: 0 auto;
+      border-radius: 5px;
+      border: 0;
+      padding: 10px;
+      box-shadow: 0 2px 20px 9px rgba(black, 0.8);
+      cursor: pointer;
+      color: rgba(black, 1);
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: rgba(black, 0.5);
+      }
     }
-  }
 
-  .displayResults{
-    display:flex;
-    min-height: 100px;
-    background-color: aqua;
+    .victoryMessage {
+      display: flex;
+      background: white;
+      justify-content: center;
+      align-content: center;
+      padding: 20px;
+      border-radius: 5px;
+      font-size: 20px;
+      max-width: 80%;
+      margin: 0 auto;
+    }
   }
 }

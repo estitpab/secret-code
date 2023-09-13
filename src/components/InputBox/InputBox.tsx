@@ -19,7 +19,6 @@ const InputBox = ({ name, position, isValid }: Props) => {
       <input
         type="text"
         className={isValid ? styles.isValid : isValid !== undefined ? styles.isError : ""}
-        required
         name={name}
         minLength={1}
         maxLength={2}
