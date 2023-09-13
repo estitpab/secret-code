@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styles from "./App.module.scss";
 import InputBox from "./components/InputBox/InputBox";
+import { Fireworks } from "fireworks-js";
 
 function App() {
   const [testedResults, setTestedResults] = useState<boolean[]>([]);
+  const fireworksContainer = useRef<HTMLCanvasElement | null>(null);
   const isExpectedResult =
     testedResults.length > 0 && testedResults.every((data) => data === true);
-  if (isExpectedResult) alert("Bravo");
+
+  if (fireworksContainer.current) {
+    const fireworks = new Fireworks(fireworksContainer.current!);
+    if (isExpectedResult && fireworksContainer.current) fireworks.start();
+  }
 
   const EXPECTED_VALUES = ["A", "B", "C", "D", "E", "F"];
   //TODO: Gérer les valeurs EXPECTED_VALUES depuis un backoffice ou des variables d'environnement
@@ -31,6 +37,8 @@ function App() {
 
   return (
     <div className={styles.formWrapper}>
+      <canvas
+        ref={fireworksContainer as React.RefObject<HTMLCanvasElement>}/>
       <form onSubmit={handleSubmit}>
         <div className={styles.inputsWrapper}>
           {EXPECTED_VALUES.map((value, index) => (
