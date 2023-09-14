@@ -18,6 +18,8 @@ function App() {
   const VICTORY_MESSAGE = "Félicitations ! Vous avez surmonté toutes les épreuves et découvert le code, à vous le trésor ! Rendez-vous **** pour trouver votre récompense !"
   //TODO: Gérer les valeurs EXPECTED_VALUES depuis un backoffice ou des variables d'environnement
 
+  console.log(import.meta.env);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement | EventTarget>) => {
     e.preventDefault();
     setTestedResults((curr) => curr);
@@ -38,6 +40,7 @@ function App() {
 
   return (
     <div className={styles.formWrapper}>
+      <h2 style={{background:"white"}}>{import.meta.env.VITE_TEST}</h2>
       <canvas ref={fireworksContainer as React.RefObject<HTMLCanvasElement>} />
       <form onSubmit={handleSubmit}>
         <div className={styles.inputsWrapper}>
