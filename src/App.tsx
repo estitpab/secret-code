@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./App.module.scss";
 import InputBox from "./components/InputBox/InputBox";
-import Fireworks from "./components/InputBox/Fireworks/FireWorks";
+import Fireworks from "./components/Fireworks/Fireworks";
 
 function App() {
   const [testedResults, setTestedResults] = useState<boolean[]>([]);
