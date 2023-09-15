@@ -14,11 +14,8 @@ function App() {
     if (isExpectedResult && fireworksContainer.current) fireworks.start();
   }
 
-  const EXPECTED_VALUES = ["A", "B", "C", "D", "E", "F"];
-  const VICTORY_MESSAGE = "Félicitations ! Vous avez surmonté toutes les épreuves et découvert le code, à vous le trésor ! Rendez-vous **** pour trouver votre récompense !"
-  //TODO: Gérer les valeurs EXPECTED_VALUES depuis un backoffice ou des variables d'environnement
-
-  console.log(import.meta.env);
+  const EXPECTED_VALUES = import.meta.env.VITE_EXPECTED_VALUES.split(",");
+  const VICTORY_MESSAGE = import.meta.env.VITE_VICTORY_MESSAGE;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement | EventTarget>) => {
     e.preventDefault();
@@ -40,11 +37,10 @@ function App() {
 
   return (
     <div className={styles.formWrapper}>
-      <h2 style={{background:"white"}}>{import.meta.env.VITE_TEST}</h2>
       <canvas ref={fireworksContainer as React.RefObject<HTMLCanvasElement>} />
       <form onSubmit={handleSubmit}>
         <div className={styles.inputsWrapper}>
-          {EXPECTED_VALUES.map((value, index) => (
+          {EXPECTED_VALUES.map((value: string, index: number) => (
             <InputBox
               key={value}
               name={String(index)}
