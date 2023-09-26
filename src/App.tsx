@@ -3,13 +3,15 @@ import styles from "./App.module.scss";
 import InputBox from "./components/InputBox/InputBox";
 import Fireworks from "./components/Fireworks/Fireworks";
 
+export const LOCAL_STORAGE_VALUES_NAME='secret_code';
+
 function App() {
   const [testedResults, setTestedResults] = useState<boolean[]>([]);
   const isExpectedResult =
     testedResults.length > 0 && testedResults.every((data) => data === true);
-
   const EXPECTED_VALUES = import.meta.env.VITE_EXPECTED_VALUES.split(",");
   const VICTORY_MESSAGE = import.meta.env.VITE_VICTORY_MESSAGE;
+  
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement | EventTarget>) => {
     e.preventDefault();
@@ -21,6 +23,8 @@ function App() {
       const formData = new FormData(form);
       const formJson = Object.fromEntries(formData.entries());
       const formValues = Object.values(formJson);
+
+      localStorage.setItem(LOCAL_STORAGE_VALUES_NAME, JSON.stringify(formValues));
 
       for (let i = 0; i < formValues.length; i++) {
         listOfResults.push(formValues[i] === EXPECTED_VALUES[i]);
