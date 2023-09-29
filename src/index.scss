@@ -7,6 +7,7 @@ body {
   align-items: center;
   justify-content: center;
   background: url(../src/assets/pattern_01.png) rgb(34, 34, 34) repeat;
+  overflow: hidden;
 
   &:before {
     position: absolute;
